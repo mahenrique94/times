@@ -47,6 +47,7 @@ export function App() {
             <select onChange={handleTimezoneChanged} value={timezone}>
               <option value="">Select a timezone</option>
               {timezones
+                // @ts-expect-error toSorted is a new js feature
                 .toSorted((t1: Timezone, t2: Timezone) =>
                   t1.abbr.toLowerCase().localeCompare(t2.abbr.toLowerCase()),
                 )
